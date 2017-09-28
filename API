@@ -1,0 +1,26 @@
+from tweepy.streaming import StreamListener
+from tweepy import OAuthHandler
+from tweepy import StreamListener
+
+access_token = "4065656414-i7ljfoytziwaog2e1RspptEKMUOkJk8EGVb2LKP"
+access_token_secret = "FbvRXmYTg8dpXYsbgrU7Hk5XUYv5WI7hafXj2md0e7WYB1"
+consumer_key = "A3UTlvVaghXyXx4sDZNbFMhjt"
+consumer_secret = "WFc2h2R5wAQOtRZdTrlQIkJU192hX6edrKZI0UoRx0P4DB6EGN"
+
+class StdOutListener(StreamListener):
+  
+  def on_data(self, data):
+     print data
+	 return True
+
+  def on_error(self, status):
+     print status
+ 
+if __name__ = ' __main__'
+	 
+ l = StdOutListener()
+ auth = OAuthHandler(consumer_key, consumer_secret)
+ auth.set_access_token(access_token, access_token_secret)
+ stream = Stream(auth, l)
+ 
+ stream.filter(track=['Hurricane Jose', 'Hurricane Irma', 'hurricane katria '])
